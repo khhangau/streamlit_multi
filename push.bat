@@ -1,3 +1,4 @@
+@echo off
 git add .
 git commit -m "streamlit_multi"
 git pull https://github.com/khhangau/streamlit_multi.git master
