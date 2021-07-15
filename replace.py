@@ -5,7 +5,7 @@ while(True):
         s = f.read()
 
     with open('BCC_Meta.out') as f:
-        if 'satellite' not in s:
+        if '358.587' not in s:
             s = f.read().replace('258.587', '358.587')
         else:
             s = f.read().replace('358.587', '258.587')
