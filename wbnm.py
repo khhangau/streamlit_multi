@@ -29,7 +29,7 @@ def pdk_func():
     view_state = pdk.ViewState(latitude=df['Latitude'].iloc[-1], longitude=df['Longitude'].iloc[-1], zoom=13, min_zoom= 10, max_zoom=30)
     
     # Render
-    r = pdk.Deck(layers=[layer], map_style='mapbox://styles/mapbox/light-v9',
+    r = pdk.Deck(layers=[layer], map_style='mapbox://styles/mapbox/satellite-v9',
                  initial_view_state=view_state, tooltip={"html": "<b>Point ID: </b> {PointID} <br /> "
                                                                  "<b>Longitude: </b> {Longitude} <br /> "
                                                                  "<b>Latitude: </b>{Latitude} <br /> "
