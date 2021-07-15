@@ -1,4 +1,0 @@
-rem git init
-rem git add .
-rem git commit "First Commit"
-git pull https://github.com/khhangau/streamlit_multi master
