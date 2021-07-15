@@ -1,16 +1,16 @@
 import subprocess, time
 
 while(True):
-    with open('wbnm.py') as f:
+    with open('BCC_Meta.out') as f:
         s = f.read()
 
-    with open('wbnm.py') as f:
+    with open('BCC_Meta.out') as f:
         if 'satellite' not in s:
-            s = f.read().replace('light', 'satellite')
+            s = f.read().replace('258.587', '358.587')
         else:
-            s = f.read().replace('satellite', 'light')
+            s = f.read().replace('358.587', '258.587')
 
-    with open('wbnm.py', 'w') as f:
+    with open('BCC_Meta.out', 'w') as f:
         f.write(s)
 
     subprocess.call(['push.bat'])
