@@ -69,6 +69,8 @@ if selection == 'Main':
         lr = st.select_slider('Loss Rate (mm/h):', options=[0,2.5,5])
         submit_button = st.form_submit_button(label='Submit')
     st.sidebar.write('lp=' + str(lp) + ', il=' + str(il) + ', lr=' + str(lr))
+    with open('form.txt', 'w') as f:
+        f.write('lp=' + str(lp) + ', il=' + str(il) + ', lr=' + str(lr))
 elif selection == 'Summary':
     st.sidebar.title('Summary')
     st.sidebar.text('TBC')
