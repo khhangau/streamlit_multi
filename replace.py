@@ -19,10 +19,10 @@ while(True):
         s = f.read()
 
     with open('wbnm.py') as f:
-        if '# Ren' not in s:
-            s = f.read().replace('# Render', '# Ren')
+        if '# Redner' not in s:
+            s = f.read().replace('# Render', '# Redner')
         else:
-            s = f.read().replace('# Ren', '# Render')
+            s = f.read().replace('# Redner', '# Render')
 
     with open('wbnm.py', 'w') as f:
         f.write(s)
