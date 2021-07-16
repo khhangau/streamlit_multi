@@ -1,5 +1,4 @@
 import subprocess, time
-from shutil import copyfile
 
 while(True):
     # toggle BCC_Meta.out
@@ -29,5 +28,4 @@ while(True):
         f.write(s)
 
     subprocess.call(['push.bat'])
-    copyfile('form.txt', 'form - copy.txt')
     time.sleep(30)
