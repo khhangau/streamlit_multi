@@ -2,7 +2,6 @@ import streamlit as st
 from multiapp import MultiApp
 import pandas as pd
 import base64
-import altair as alt
 
 def app(site, file, start, end, code, interpfile, gfile, end_dt):
     st.write("""
@@ -68,18 +67,7 @@ def app(site, file, start, end, code, interpfile, gfile, end_dt):
     st.write("""
     ## WBNM Levels
     """)
-
-    data = hDf.reset_index().melt('Time')
-    c = alt.Chart(data).mark_line().encode(
-        x='Time',
-        y=alt.Y('value',
-            scale=alt.Scale(zero=False),
-            axis=alt.Axis(title='Water Levels')
-        ),
-        color=alt.Color('variable', title='')
-    )
-    st.altair_chart(c, use_container_width=True)
-
+    st.line_chart(hDf)
     st.markdown(
         f'<a href="data:file/csv;base64,{data_h}" download="hdata.csv">Download Data</a>',
         unsafe_allow_html=True
@@ -87,19 +75,7 @@ def app(site, file, start, end, code, interpfile, gfile, end_dt):
     st.write("""
     ## WBNM Discharges
     """)
-
-    data = qDf.reset_index().melt('Time')
-    c = alt.Chart(data).mark_area(opacity=0.5).encode(
-        x='Time',
-        y=alt.Y('value',
-            scale=alt.Scale(zero=False),
-            axis=alt.Axis(title='Water Levels'),
-            stack=None
-        ),
-        color=alt.Color('variable', title='')
-    )
-    st.altair_chart(c, use_container_width=True)
-
+    st.area_chart(qDf)
     st.markdown(
         f'<a href="data:file/csv;base64,{data_q}" download="qdata.csv">Download Data</a>',
         unsafe_allow_html=True
