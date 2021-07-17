@@ -64,10 +64,11 @@ if selection == 'Main':
     st.sidebar.checkbox('Enable Alerts')
     st.sidebar.title('')
     with st.sidebar.form(key='form'):
-        st.slider('Lag Parameter:', min_value=1.5, max_value=1.7)
-        st.select_slider('Initial Loss (mm):', options=[0,10,20])
-        st.select_slider('Loss Rate (mm/h):', options=[0,2.5,5])
+        lp = st.slider('Lag Parameter:', min_value=1.5, max_value=1.7)
+        il = st.select_slider('Initial Loss (mm):', options=[0,10,20])
+        lr = st.select_slider('Loss Rate (mm/h):', options=[0,2.5,5])
         submit_button = st.form_submit_button(label='Submit')
+    st.sidebar.write('lp=' + str(lp) + ', il=' + str(il) + ', lr=' + str(lr))
 elif selection == 'Summary':
     st.sidebar.title('Summary')
     st.sidebar.text('TBC')

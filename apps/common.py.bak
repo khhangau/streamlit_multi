@@ -93,7 +93,7 @@ def app(site, file, start, end, code, interpfile, gfile, end_dt):
         x='Time',
         y=alt.Y('value',
             scale=alt.Scale(zero=False),
-            axis=alt.Axis(title='Discharges'),
+            axis=alt.Axis(title='Water Levels'),
             stack=None
         ),
         color=alt.Color('variable', title='')
